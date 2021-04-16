@@ -1,0 +1,11 @@
+• includes.h
+  - Foi criado um arquivo .h chamado includes que irá conter as chamadas de todas as bibliotecas 
+  usadas no trabalho prático, bem como a definição do SO para definir qual comando será utilizado
+  para limpar o terminal (cls no windows e clear no linux);
+  - Assim, ao invés de incluir a mesma biblioteca em vários arquivos diferentes, incluimos tudo
+  no includes.h e posteriormente chamamos tal arquivo com as bibliotecas necessarias;
+
+• Estrutura de Dados
+    
+
+• Leitura de Arquivo

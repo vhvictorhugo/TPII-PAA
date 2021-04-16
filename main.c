@@ -4,8 +4,8 @@
 *   Matéria: Projeto e Análise de Algoritmos
 *   Professor: Daniel Mendes Barbosa
 */
-#include <stdlib.h>
-#include <stdio.h>
+
+#include "./Headers/includes.h"
 
 int main(int argc, char const *argv[])
 {
