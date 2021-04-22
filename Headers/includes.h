@@ -5,8 +5,10 @@
 *   Professor: Daniel Mendes Barbosa
 */
 
-
 // ================ includes ================
 
 #include <stdlib.h>
 #include <stdio.h>
+
+#include "auxiliares.h"
+#include "caverna.h"
