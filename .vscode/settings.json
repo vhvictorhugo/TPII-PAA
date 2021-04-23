@@ -2,6 +2,7 @@
     "files.associations": {
         "malloc.h": "c",
         "caverna.h": "c",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "includes.h": "c"
     }
 }

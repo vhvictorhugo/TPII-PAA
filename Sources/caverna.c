@@ -6,48 +6,35 @@
 */
 
 #include "../Headers/caverna.h"
- 
-void inicializaCaverna(TipoApontador *ponteiro, int linha, int coluna, int vida){
-    (*ponteiro) = (TipoCaverna*)malloc(sizeof(TipoCaverna));
 
-    (*ponteiro)->qtColunas = coluna;
-    (*ponteiro)->qtLinhas = linha;
-    (*ponteiro)->qtVida = vida;
+void inicializaCaverna(TipoApontador *apCaverna, int linha, int coluna, int vida)
+{
+    (*apCaverna) = (TipoCaverna *)malloc(sizeof(TipoCaverna)); // aloca a estrutura
 
-    (*ponteiro)->caverna = (int **)calloc(((*ponteiro)->qtLinhas + 1),sizeof(int*));
+    (*apCaverna)->qtColunas = coluna;
+    (*apCaverna)->qtLinhas = linha;
+    (*apCaverna)->qtVida = vida;
 
-    for(int i = 0; i < linha; i++){
-        (*ponteiro)->caverna[i] = (int *)calloc(((*ponteiro)->qtColunas + 1),sizeof(int));
-    }
- 
-    printf("Inicializou sem explodir\n");
-}
+    (*apCaverna)->caverna = (int **)calloc(((*apCaverna)->qtLinhas + 1), sizeof(int *));
 
-void inserirCaverna(TipoApontador *ponteiro){
-    for (int i = 0; i < (*ponteiro)->qtLinhas; i++)
+    for (int i = 0; i < linha; i++)
     {
-        for (int j = 0; j < (*ponteiro)->qtColunas; j++)
-        {
-            (*ponteiro)->caverna[i][j] = -1;
-        }
-        
+        (*apCaverna)->caverna[i] = (int *)calloc(((*apCaverna)->qtColunas + 1), sizeof(int));
     }
-    
 }
 
-void mostrarCaverna(TipoApontador *ponteiro){
-    printf("linha: %d\n",(*ponteiro)->qtLinhas);
-    printf("Coluna: %d\n",(*ponteiro)->qtColunas);
-    printf("Vida: %d\n",(*ponteiro)->qtVida);
+void mostrarCaverna(TipoApontador *apCaverna)
+{
+    printf("linha: %d\n", (*apCaverna)->qtLinhas);
+    printf("Coluna: %d\n", (*apCaverna)->qtColunas);
+    printf("Vida: %d\n", (*apCaverna)->qtVida);
 
-     
-    for (int i = 0; i < (*ponteiro)->qtLinhas; i++)
+    for (int i = 0; i < (*apCaverna)->qtLinhas; i++)
     {
         printf("\n");
-        for (int j = 0; j < (*ponteiro)->qtColunas; j++)
+        for (int j = 0; j < (*apCaverna)->qtColunas; j++)
         {
-            printf("%d ",(*ponteiro)->caverna[i][j]);
+            printf("%d ", (*apCaverna)->caverna[i][j]);
         }
     }
-
 }

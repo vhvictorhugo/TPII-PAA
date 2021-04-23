@@ -1,20 +1,23 @@
+#ifndef CAVERNA_H
+#define CAVERNA_H
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <malloc.h>
 #include <string.h>
 #include <time.h>
 
-typedef int ** Caverna;
+typedef int **Caverna;
 
-typedef struct 
+typedef struct
 {
     Caverna caverna;
     int qtLinhas, qtColunas, qtVida;
-}TipoCaverna;
+} TipoCaverna;
 
 typedef TipoCaverna *TipoApontador;
 
-void inicializaCaverna(TipoApontador *ponteiro, int linha, int coluna, int vida);
-void inserirCaverna(TipoApontador *ponteiro);
+void inicializaCaverna(TipoApontador *apCaverna, int linha, int coluna, int vida);
 void mostrarCaverna(TipoApontador *apCaverna);
 
+#endif
