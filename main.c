@@ -1,28 +1,24 @@
 /*
-*   Programa: 
+*   Programa: PROBLEMA DA CAVERNA
 *   Autor: Roniel Nunes Barbosa e Victor Hugo Santos
 *   Matéria: Projeto e Análise de Algoritmos
 *   Professor: Daniel Mendes Barbosa
 */
 
-#include "./Headers/includes.h"
+#include "./Headers/caverna.h"
+
+//gcc -o exec main.c ./Sources/caverna.c 
+//Como rodar o makefile no windows mingw32-make <enter>  exec <enter>
 
 int main(int argc, char const *argv[])
 {
-    // char valor [3] = {"+20"};
-    // int valorInteiro = valor[];
-
-    // if(20 == +20){
-    //     puts("yes");
-    // }
-
+ 
+     
+    
     TipoApontador caverna;
-    int qtLinhas = 10, qtColunas = 10, qtVida = 10;
-    puts("main");
-
-    inicializaCaverna(&caverna, qtLinhas, qtColunas, qtVida);
-    puts("inicializou");
-    mostraCaverna(&caverna);
-
+    int linha = 3, coluna = 3, vida = 40;
+    inicializaCaverna(&caverna,linha,coluna,vida);
+    inserirCaverna(&caverna);
+    mostrarCaverna(&caverna);
     return 0;
 }

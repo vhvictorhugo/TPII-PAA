@@ -1,4 +1,4 @@
 compile:
-		gcc -o exec main.c ./Source/auxiliares.c ./Source/caverna.c
+		gcc -o exec main.c ./Sources/caverna.c
 run:
 		./exec

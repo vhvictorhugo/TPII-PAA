@@ -1,25 +1,20 @@
-/*
-*   Programa: PROBLEMA DO LABIRINTO
-*   Autor: Roniel Nunes Barbosa e Victor Hugo Santos
-*   Matéria: Projeto e Análise de Algoritmos
-*   Professor: Daniel Mendes Barbosa
-*/
+#include <stdlib.h>
+#include <stdio.h>
+#include <malloc.h>
+#include <string.h>
+#include <time.h>
 
-#ifndef CAVERNA_H
-#define CAVERNA_H
+typedef int ** Caverna;
 
-#include "includes.h"
-
-typedef int **Caverna;
-typedef struct
+typedef struct 
 {
     Caverna caverna;
     int qtLinhas, qtColunas, qtVida;
-} TipoCaverna;
+}TipoCaverna;
 
 typedef TipoCaverna *TipoApontador;
 
-void inicializaCaverna(TipoApontador *apCaverna, int linha, int coluna, int vida);
-void mostraCaverna(TipoApontador *apCaverna);
+void inicializaCaverna(TipoApontador *ponteiro, int linha, int coluna, int vida);
+void inserirCaverna(TipoApontador *ponteiro);
+void mostrarCaverna(TipoApontador *apCaverna);
 
-#endif
