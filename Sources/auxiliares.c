@@ -27,10 +27,10 @@ void leituraArquivo(TipoApontador *apCaverna)
         for (int j = 0; j < (*apCaverna)->qtColunas; j++)
         {
             fscanf(arquivo, "%s", valorLeitura);
-            if (valorLeitura[0] == 70)
-                (*apCaverna)->caverna[i][j] = 70;
-            else if (valorLeitura[0] == 73)
-                (*apCaverna)->caverna[i][j] = 73;
+            if (valorLeitura[0] == 70)            // valor da tabela ASCII para a letra F
+                (*apCaverna)->caverna[i][j] = 70; // atribui o valor
+            else if (valorLeitura[0] == 73)       // valor da tabela ASCII para a letra I
+                (*apCaverna)->caverna[i][j] = 73; // atribui o valor
             else
                 (*apCaverna)->caverna[i][j] = atoi(valorLeitura);
         }
