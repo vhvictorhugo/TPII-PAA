@@ -2,7 +2,7 @@
 
 void leituraArquivo(TipoApontador *apCaverna)
 {
-    char nomeArquivo[20], caminhoArquivo[40] = "./arquivos/caverna1.txt";
+    char nomeArquivo[20], caminhoArquivo[40] = "./arquivos/caverna2.txt";
     char valorLeitura[10]; // valor pode ser de até 10 digitos (deve ser inteiro - faixa de valores:  -2.147.483.648 até 2.147.483.647)
 
     FILE *arquivo;
@@ -27,10 +27,18 @@ void leituraArquivo(TipoApontador *apCaverna)
         for (int j = 0; j < (*apCaverna)->qtColunas; j++)
         {
             fscanf(arquivo, "%s", valorLeitura);
-            if (valorLeitura[0] == 70)            // valor da tabela ASCII para a letra F
+            if (valorLeitura[0] == 70) // valor da tabela ASCII para a letra F
+            {
                 (*apCaverna)->caverna[i][j] = 70; // atribui o valor
-            else if (valorLeitura[0] == 73)       // valor da tabela ASCII para a letra I
+                (*apCaverna)->xSaida = i;
+                (*apCaverna)->ySaida = j;
+            }
+            else if (valorLeitura[0] == 73) // valor da tabela ASCII para a letra I
+            {
                 (*apCaverna)->caverna[i][j] = 73; // atribui o valor
+                (*apCaverna)->xEstudante = i;
+                (*apCaverna)->yEstudante = j;
+            }
             else
                 (*apCaverna)->caverna[i][j] = atoi(valorLeitura);
         }
