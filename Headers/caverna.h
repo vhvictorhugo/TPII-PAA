@@ -7,6 +7,17 @@
 #include <string.h>
 #include <time.h>
 
+
+
+typedef char **Tabela;
+
+typedef struct 
+{
+   Tabela tabela;
+   int qtLinhas, qtColunas;
+}TipoTabela;
+typedef TipoTabela * TipoApontadorTabela;
+
 typedef int **Caverna;
 
 typedef struct
@@ -17,13 +28,17 @@ typedef struct
     int xEstudante, yEstudante; // coordenadas da entrada inicial
 } TipoCaverna;
 
+
 typedef TipoCaverna *TipoApontador;
 
 void inicializaCaverna(TipoApontador *apCaverna, int linha, int coluna, int vida);
 void mostrarCaverna(TipoApontador *apCaverna);
 int max(int a, int b);
-void movimentaEstudante(TipoApontador *apCaverna); 
+//void movimentaEstudante(TipoApontador *apCaverna); 
 int verificaPosicao(TipoApontador *apCaverna, int x, int y);
  
+void movimentaEstudante(TipoApontador *apCaverna, TipoApontadorTabela *apTabela);
+void inicializaTabela(TipoApontador *apCaverna, TipoApontadorTabela *apTabela);
+
 
 #endif

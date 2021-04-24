@@ -23,6 +23,23 @@ void inicializaCaverna(TipoApontador *apCaverna, int linha, int coluna, int vida
     }
 }
 
+void inicializaTabela(TipoApontador *apCaverna, TipoApontadorTabela *apTabela){
+   
+    (*apTabela) = (TipoTabela *)malloc(sizeof(TipoTabela)); //Faz a alocação da estrutura
+
+    (*apTabela)->qtLinhas = (*apCaverna)->qtLinhas;
+    (*apTabela)->qtColunas = (*apCaverna)->qtColunas;
+
+    (*apTabela)->tabela = (char **)calloc(((*apTabela)->qtLinhas+1),sizeof(char *));
+    
+    for (int i = 0; i < (*apTabela)->qtLinhas; i++)
+    {
+        (*apTabela)->tabela[i] = (char *)calloc(((*apTabela)->qtColunas + 1), sizeof(char));
+    }
+}
+
+
+
 void mostrarCaverna(TipoApontador *apCaverna)
 {
     printf("linha: %d\n", (*apCaverna)->qtLinhas);
@@ -51,8 +68,7 @@ int max(int a, int b)
     }
 }
 
-
-void movimentaEstudante(TipoApontador *apCaverna)
+void movimentaEstudante(TipoApontador *apCaverna, TipoApontadorTabela *apTabela)
 {
     char tabelaPassos[(*apCaverna)->qtLinhas][(*apCaverna)->qtColunas]; // tabela auxiliar para armazenas as direções dos passos
     int tabelaAux[(*apCaverna)->qtLinhas][(*apCaverna)->qtColunas];
@@ -86,11 +102,6 @@ void movimentaEstudante(TipoApontador *apCaverna)
                 verificaDireita = verificaPosicao(&(*apCaverna), i, j + 1);
 
                 verificaBaixo = verificaPosicao(&(*apCaverna), i + 1, j);
-               // printf("direita %d: ", verificaDireita);
-
-                //printf("baixo %d: ", verificaBaixo);
-
-               // system("pause");
 
                 if (verificaBaixo == 1 && verificaDireita == 1)
                 {
