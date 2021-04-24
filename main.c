@@ -14,11 +14,12 @@
 int main(int argc, char const *argv[])
 {
     TipoApontador caverna;
-
+     
     leituraArquivo(&caverna);
     //mostrarCaverna(&caverna);
-
+ 
     movimentaEstudante(&caverna);
+ 
 
     return 0;
 }

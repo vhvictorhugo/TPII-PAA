@@ -2,7 +2,7 @@
 
 void leituraArquivo(TipoApontador *apCaverna)
 {
-    char nomeArquivo[20], caminhoArquivo[40] = "./arquivos/caverna2.txt";
+    char nomeArquivo[20], caminhoArquivo[40] = "./arquivos/caverna3.txt";
     char valorLeitura[10]; // valor pode ser de até 10 digitos (deve ser inteiro - faixa de valores:  -2.147.483.648 até 2.147.483.647)
 
     FILE *arquivo;

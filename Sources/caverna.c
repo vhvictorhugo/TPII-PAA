@@ -51,15 +51,27 @@ int max(int a, int b)
     }
 }
 
+
 void movimentaEstudante(TipoApontador *apCaverna)
 {
     char tabelaPassos[(*apCaverna)->qtLinhas][(*apCaverna)->qtColunas]; // tabela auxiliar para armazenas as direções dos passos
+    int tabelaAux[(*apCaverna)->qtLinhas][(*apCaverna)->qtColunas];
     int verificaCasoBase = 1;                                           //  se for 1, quer dizer que estamos na posicao inicial e então não se faz verificação
     int verificaBaixo, verificaDireita;
+    int maximo = 0;
 
+    
     (*apCaverna)->caverna[(*apCaverna)->xSaida][(*apCaverna)->ySaida] = 0;
     (*apCaverna)->caverna[(*apCaverna)->xEstudante][(*apCaverna)->yEstudante] = (*apCaverna)->qtVida;
 
+    for (int i = (*apCaverna)->xSaida; i < (*apCaverna)->qtLinhas; i++) 
+    {
+        for (int j = (*apCaverna)->ySaida; j < (*apCaverna)->qtColunas; j++)
+        {
+             tabelaAux[i][j] = (*apCaverna)->caverna[i][j];
+        }
+    }
+    
     for (int i = (*apCaverna)->qtLinhas - 1; i >= (*apCaverna)->xSaida; i--) // for que percorre a parte limitada da solução
     {
         for (int j = (*apCaverna)->qtColunas - 1; j >= (*apCaverna)->ySaida; j--)
@@ -72,26 +84,43 @@ void movimentaEstudante(TipoApontador *apCaverna)
             else
             {
                 verificaDireita = verificaPosicao(&(*apCaverna), i, j + 1);
+
                 verificaBaixo = verificaPosicao(&(*apCaverna), i + 1, j);
+               // printf("direita %d: ", verificaDireita);
+
+                //printf("baixo %d: ", verificaBaixo);
+
+               // system("pause");
 
                 if (verificaBaixo == 1 && verificaDireita == 1)
                 {
-                    if (max((*apCaverna)->caverna[i + 1][j] + (*apCaverna)->caverna[i][j], (*apCaverna)->caverna[i][j + 1] + (*apCaverna)->caverna[i][j]))
+
+                    if (max(tabelaAux[i + 1][j] + tabelaAux[i][j], tabelaAux[i][j + 1] + tabelaAux[i][j]))
                     {
+                        
                         tabelaPassos[i][j] = 'b';
+                        tabelaAux[i][j] = tabelaAux[i + 1][j] + tabelaAux[i][j];
+                        
+
                     }
                     else
                     {
-                        tabelaPassos[i][j] = 'd';
+                        tabelaPassos[i][j] = 'd';                      
+                        tabelaAux[i][j] = tabelaAux[i][j + 1] + tabelaAux[i][j];
+                        
                     }
                 }
                 else if (verificaBaixo == 1 && verificaDireita == 0)
                 {
                     tabelaPassos[i][j] = 'b';
+                    tabelaAux[i][j] = tabelaAux[i + 1][j] + tabelaAux[i][j];
+                    
                 }
                 else if (verificaBaixo == 0 && verificaDireita == 1)
                 {
                     tabelaPassos[i][j] = 'd';
+                    tabelaAux[i][j] = tabelaAux[i][j + 1] + tabelaAux[i][j];
+                    
                 }
             }
         }
@@ -101,7 +130,16 @@ void movimentaEstudante(TipoApontador *apCaverna)
     {
         for (int j = (*apCaverna)->ySaida; j < (*apCaverna)->qtColunas; j++)
         {
-            printf("%c ", tabelaPassos[i][j]);
+            printf("%c ", tabelaPassos[i][j]); 
+        }
+        puts("");
+    }
+
+        for (int i = (*apCaverna)->xSaida; i < (*apCaverna)->qtLinhas; i++) // for que percorre a parte limitada da solução
+    {
+        for (int j = (*apCaverna)->ySaida; j < (*apCaverna)->qtColunas; j++)
+        {
+            printf("%d ", tabelaAux[i][j]); 
         }
         puts("");
     }
