@@ -37,7 +37,7 @@ int max(int a, int b);
 //void movimentaEstudante(TipoApontador *apCaverna); 
 int verificaPosicao(TipoApontador *apCaverna, int x, int y);
  
-void movimentaEstudante(TipoApontador *apCaverna, TipoApontadorTabela *apTabela);
+void movimentaEstudante(TipoApontador *apCaverna, TipoApontadorTabela *apTabelaPassos);
 void inicializaTabela(TipoApontador *apCaverna, TipoApontadorTabela *apTabela);
 
 

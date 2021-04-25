@@ -14,29 +14,39 @@
 int main(int argc, char const *argv[])
 {
 
+    if(argc == 2) //exec caverna1.txt
+    {
+      
+    }
 
+    
+    char nomeArquivo[30] = "teste.txt";
     TipoApontadorTabela tabelaPassos; //Tipo tabela tipo char
     TipoApontador caverna;
      
     leituraArquivo(&caverna);
-    //mostrarCaverna(&caverna);
     inicializaTabela(&caverna,&tabelaPassos);
-
-
-
     movimentaEstudante(&caverna,&tabelaPassos);
+    mostrarCaverna(&caverna);
+    EscritaArquivo(&caverna,&tabelaPassos);
     
+    
+
+/*
+  int main( int argc, char *argv[ ] )
+
+  Onde:
+
+  argc – é um valor inteiro que indica a quantidade de argumentos que foram passados ao chamar o programa.
+
+  argv – é um vetor de char que contém os argumentos, um para cada string passada na linha de comando.
+
+  argv[0] armazena o nome do programa que foi chamado no prompt, sendo assim, argc é pelo menos igual a 1, pois no mínimo existirá um argumento.
+
+*/
      /*
 void main(int argc, char **argv){
-
-  char nomeArquivo[30];
-  printf("=====================================================================\n");
-  printf("=       *******     *   ********   ********       *         *       =\n");
-  printf("=      *       *        *          *               *       *        =\n");
-  printf("=      *       *    *   ********   *         ****   *     *         =\n");
-  printf("=      *     *      *          *   *                 *   *          =\n");
-  printf("=      *       *    *   ********   ********            *            =\n");
-  printf("=====================================================================\n");
+ 
   strcpy(nomeArquivo, argv[1] );
   if(argc == 2) //gcc -o teste main.c montador.c src/include/montador.h
     imprimirNoTerminal(nomeArquivo); //teste entrada.asm
