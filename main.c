@@ -1,4 +1,9 @@
-
+/*
+*   Programa: PROBLEMA DE PROGRAMAÇÃO DINÂMICA FUGA DA CAVERNA
+*   Autor: Roniel Nunes Barbosa e Victor Hugo Santos
+*   Matéria: Projeto e Análise de Algoritmos
+*   Professor: Daniel Mendes Barbosa
+*/
 
 #include "./Headers/caverna.h"
 #include "./Headers/auxiliares.h"
