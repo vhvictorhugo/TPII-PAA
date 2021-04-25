@@ -11,8 +11,7 @@
    🚀Descrição do Projeto
 </h1>
 <p>
-  Neste projeto,o grupo deveria propor e desenvolver um sistema usando orientação a objetos e a
-linguagem Java. Deste modo, foi escolhido o desenvolvimento de um jogo 2D. 
+  Neste projeto, tivemos que implementar a solução de um problema atráves de programação dinâmica.s
 </p>
  
  <h1>
