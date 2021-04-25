@@ -14,8 +14,6 @@
 #include <string.h>
 #include <time.h>
 
-
-
 typedef char **Tabela;
 
 typedef struct 
@@ -41,11 +39,8 @@ typedef TipoCaverna *TipoApontador;
 void inicializaCaverna(TipoApontador *apCaverna, int linha, int coluna, int vida);
 void mostrarCaverna(TipoApontador *apCaverna);
 int max(int a, int b);
- 
 int verificaPosicao(TipoApontador *apCaverna, int x, int y);
- 
 void movimentaEstudante(TipoApontador *apCaverna, TipoApontadorTabela *apTabelaPassos);
 void inicializaTabela(TipoApontador *apCaverna, TipoApontadorTabela *apTabela);
-
 
 #endif
