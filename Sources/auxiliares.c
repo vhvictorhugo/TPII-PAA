@@ -1,15 +1,15 @@
 #include "../Headers/auxiliares.h"
 
-void leituraArquivo(TipoApontador *apCaverna)
+void leituraArquivo(TipoApontador *apCaverna, char *nomeArquivo)
 {
-    char nomeArquivo[20], caminhoArquivo[40] = "./arquivos/caverna1.txt";
+    //char nomeArquivo[20], caminhoArquivo[40] = "./arquivos/caverna1.txt";
     char valorLeitura[10]; // valor pode ser de até 10 digitos (deve ser inteiro - faixa de valores:  -2.147.483.648 até 2.147.483.647)
 
     FILE *arquivo;
 
     int linha, coluna, vida;
 
-    arquivo = fopen(caminhoArquivo, "r");
+    arquivo = fopen(nomeArquivo, "r");
 
     if (arquivo == NULL)
     {
@@ -55,7 +55,7 @@ void EscritaArquivo(TipoApontador *apCaverna, TipoApontadorTabela *apTabela){
     int movimentoI = (*apCaverna)->xSaida;
     int movimentoj = (*apCaverna)->ySaida;
     //Abertura do arquivo para escrita
-    arquivoSaida = fopen("testeSAIDA.txt","w");
+    arquivoSaida = fopen("SAIDA.txt","w");
 
     //Preecorrendo a tabela passoas para inserir no arquivo a solução
     for (int i = (*apCaverna)->xSaida ; i < (*apCaverna)->qtLinhas; i++)
@@ -86,7 +86,7 @@ void EscritaArquivo(TipoApontador *apCaverna, TipoApontadorTabela *apTabela){
     fclose(arquivoSaida);
 
     if(vida <= 0){
-        arquivoSaida = fopen("testeSAIDA.txt","w");
+        arquivoSaida = fopen("SAIDA.txt","w");
         fprintf(arquivoSaida,"Impossível");
     }
 

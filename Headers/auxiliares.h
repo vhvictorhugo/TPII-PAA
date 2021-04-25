@@ -9,6 +9,6 @@
 
 #include "caverna.h"
 
-void leituraArquivo(TipoApontador *apCaverna);
+void leituraArquivo(TipoApontador *apCaverna, char *nomeArquivo);
 void EscritaArquivo(TipoApontador *apCaverna, TipoApontadorTabela *apTabela);
 #endif
