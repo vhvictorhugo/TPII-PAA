@@ -65,15 +65,15 @@ void EscritaArquivo(TipoApontador *apCaverna, TipoApontadorTabela *apTabela)
     if ((*apCaverna)->xEstudante < (*apCaverna)->xSaida || (*apCaverna)->yEstudante < (*apCaverna)->ySaida)
     { // coluna estudante é menor que coluna da saida e linha estudante é menor que linha da saida
 
-        remove("./arquivos/PASSOS.txt");
-        arquivoSaida = fopen("./arquivos/resultado.txt", "w");
+        remove("./saidas/PASSOS.txt");
+        arquivoSaida = fopen("./saidas/resultado.txt", "w");
         fprintf(arquivoSaida, "Impossível");
         fclose(arquivoSaida);
         return;
     }
 
     //Abertura do arquivo para escrita
-    arquivoSaida = fopen("./arquivos/resultado.txt", "w");
+    arquivoSaida = fopen("./saidas/resultado.txt", "w");
 
     //Percorrendo a tabela passos para inserir no arquivo a solução
     for (int i = (*apCaverna)->xSaida; i <= (*apCaverna)->xEstudante; i++)
@@ -115,9 +115,9 @@ void EscritaArquivo(TipoApontador *apCaverna, TipoApontadorTabela *apTabela)
 
     if (vida <= 0)
     {                                       // vida do estudante ao final do trajeto <= 0
-        remove("./arquivos/resultado.txt"); // exclui o arquivo anterior para adicionar um novo contendo a solucao sem saida
-        remove("./arquivos/PASSOS.txt");    // exclui da pasta o arquivo PASSOS.txt, já que é impossivel sair
-        arquivoSaida = fopen("./arquivos/resultado.txt", "w");
+        remove("./saidas/resultado.txt"); // exclui o arquivo anterior para adicionar um novo contendo a solucao sem saida
+        remove("./saidas/PASSOS.txt");    // exclui da pasta o arquivo PASSOS.txt, já que é impossivel sair
+        arquivoSaida = fopen("./saidas/resultado.txt", "w");
         fprintf(arquivoSaida, "Impossível");
         fclose(arquivoSaida);
         return;
@@ -130,9 +130,9 @@ void EscritaArquivo(TipoApontador *apCaverna, TipoApontadorTabela *apTabela)
 
 void converteArquivo()
 {
-    FILE *arq = fopen("./arquivos/resultado.txt", "r");
+    FILE *arq = fopen("./saidas/resultado.txt", "r");
 
-    FILE *arqAux = fopen("./arquivos/PASSOS.txt", "w");
+    FILE *arqAux = fopen("./saidas/PASSOS.txt", "w");
 
     int numLinhas = -1, posI, posJ;
 
@@ -173,7 +173,7 @@ void converteArquivo()
     fclose(arq);
     fclose(arqAux);
 
-    remove("./arquivos/resultado.txt");
+    remove("./saidas/resultado.txt");
 
     return;
 }
