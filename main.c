@@ -10,18 +10,21 @@
 
 int main(int argc, char const *argv[])
 {
-    TipoApontadorTabela tabelaPassos;
+    TipoApontadorTabela tabelaPassos; // tabela que armazenara as decisoes, tem as mesmas dimensoes do problema original
     TipoApontador caverna;
+
     char nomeArquivo[70];
-    if (argc == 2)//exec caverna1.txt(se tiver na msm pasta que o main) ou exec ./arquivos/caverna1.txt
+
+    if (argc == 2) //exec caverna1.txt(se tiver na msm pasta que o main) ou exec ./arquivos/caverna1.txt
     {
-        strcpy(nomeArquivo,argv[1]);
-        leituraArquivo(&caverna,nomeArquivo);
-        inicializaTabela(&caverna,&tabelaPassos);
-        movimentaEstudante(&caverna,&tabelaPassos);
-        mostrarCaverna(&caverna);
-        EscritaArquivo(&caverna,&tabelaPassos);
+        strcpy(nomeArquivo, argv[1]);
+
+        leituraArquivo(&caverna, nomeArquivo);
+        inicializaTabela(&caverna, &tabelaPassos);
+        movimentaEstudante(&caverna, &tabelaPassos);
+        EscritaArquivo(&caverna, &tabelaPassos);
     }
+
     /*
     int main( int argc, char *argv[ ] )
 
@@ -36,6 +39,7 @@ int main(int argc, char const *argv[])
     argv[0] armazena o nome do programa que foi chamado 
     no prompt, sendo assim, argc é pelo menos igual a 1, 
     pois no mínimo existirá um argumento.
-    */   
-    return 0;   
+    */
+
+    return 0;
 }

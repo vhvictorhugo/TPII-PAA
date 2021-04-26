@@ -18,4 +18,5 @@
 
 void leituraArquivo(TipoApontador *apCaverna, char *nomeArquivo);
 void EscritaArquivo(TipoApontador *apCaverna, TipoApontadorTabela *apTabela);
+void converteArquivo();
 #endif

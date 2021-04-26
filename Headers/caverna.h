@@ -16,12 +16,13 @@
 
 typedef char **Tabela;
 
-typedef struct 
+typedef struct
 {
-   Tabela tabela;
-   int qtLinhas, qtColunas;
-}TipoTabela;
-typedef TipoTabela * TipoApontadorTabela;
+    Tabela tabela;
+    int qtLinhas, qtColunas;
+} TipoTabela;
+
+typedef TipoTabela *TipoApontadorTabela;
 
 typedef int **Caverna;
 
@@ -33,11 +34,10 @@ typedef struct
     int xEstudante, yEstudante; // coordenadas da entrada inicial
 } TipoCaverna;
 
-
 typedef TipoCaverna *TipoApontador;
 
 void inicializaCaverna(TipoApontador *apCaverna, int linha, int coluna, int vida);
-void mostrarCaverna(TipoApontador *apCaverna);
+void mostrarCaverna(TipoApontador *apCaverna); // retirar dps
 int max(int a, int b);
 int verificaPosicao(TipoApontador *apCaverna, int x, int y);
 void movimentaEstudante(TipoApontador *apCaverna, TipoApontadorTabela *apTabelaPassos);
