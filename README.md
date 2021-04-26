@@ -11,7 +11,7 @@
    🚀Descrição do Projeto
 </h1>
 <p>
-  Neste projeto, tivemos que implementar a solução de um problema atráves de programação dinâmica.s
+  Neste projeto, tivemos que implementar a solução de um problema atráves de programação dinâmica.
 </p>
  
  <h1>
@@ -69,7 +69,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
  <td align="center"><a href="https://github.com/RonielNunes"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/46944438?v=4" width="100px;" alt=""/><br /><sub><b>Roniel Barbosa</b></sub></a><br /><a href="https://avatars.githubusercontent.com/u/46944438?v=4" title="Grupo PAA">🚀</a>
  </td>
  
-  <td align="center"><a href="https://github.com/Elida-E"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/49657888?v=4" width="100px;" alt=""/><br /><sub><b>Victor H. Santos</b></sub></a><br /><a href="https://github.com/vhvictorhugo" title="Grupo PAA">🚀</a>
+  <td align="center"><a href="https://github.com/vhvictorhugo"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/49657888?v=4" width="100px;" alt=""/><br /><sub><b>Victor H. Santos</b></sub></a><br /><a href="https://github.com/vhvictorhugo" title="Grupo PAA">🚀</a>
  </td>
   
  
