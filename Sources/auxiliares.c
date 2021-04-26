@@ -114,17 +114,18 @@ void EscritaArquivo(TipoApontador *apCaverna, TipoApontadorTabela *apTabela)
     fclose(arquivoSaida);
 
     if (vida <= 0)
-    {                                       // vida ao final do trajeto fica <= 0
+    {                                       // vida do estudante ao final do trajeto <= 0
         remove("./arquivos/resultado.txt"); // exclui o arquivo anterior para adicionar um novo contendo a solucao sem saida
+        remove("./arquivos/PASSOS.txt");    // exclui da pasta o arquivo PASSOS.txt, já que é impossivel sair
         arquivoSaida = fopen("./arquivos/resultado.txt", "w");
         fprintf(arquivoSaida, "Impossível");
         fclose(arquivoSaida);
+        return;
     }
-    else
-    {
-        converteArquivo();
-        remove("./arquivos/resultado.txt");
-    }
+
+    // chega nessa linha de comando caso haja uma solucao
+    converteArquivo();
+    return;
 }
 
 void converteArquivo()
@@ -136,8 +137,8 @@ void converteArquivo()
     int numLinhas = -1, posI, posJ;
 
     while (!feof(arq))
-    { // percorre o arquivo para contar quantas linhas tem
-        fscanf(arq, "%d %d", &posI, &posJ);
+    {                                       // percorre o arquivo para contar quantas linhas tem
+        fscanf(arq, "%d %d", &posI, &posJ); // comando auxiliar
         numLinhas++;
     }
 
@@ -146,7 +147,7 @@ void converteArquivo()
     int matriz[numLinhas][2]; // armazena os valores das linhas do arquivo
 
     for (int i = (numLinhas - 1); i >= 0; i--)
-    { // for para criar a matriz com os valores do arquivo com as informacoes invertidas
+    { // for para criar a matriz com os valores do arquivo com as informacoes invertidas - preenche a matriz invertidamente
         fscanf(arq, "%d %d", &posI, &posJ);
 
         for (int j = 1; j >= 0; j--)
@@ -159,7 +160,7 @@ void converteArquivo()
     }
 
     for (int i = 0; i < numLinhas; i++)
-    {
+    { // "printa" a matriz no arquivo
         for (int j = 0; j < 2; j++)
         {
             if (j == 0)
@@ -171,6 +172,8 @@ void converteArquivo()
 
     fclose(arq);
     fclose(arqAux);
+
+    remove("./arquivos/resultado.txt");
 
     return;
 }

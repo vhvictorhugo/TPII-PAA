@@ -5,6 +5,8 @@
 *   Professor: Daniel Mendes Barbosa
 */
 
+// ================ funcoes auxiliares ================
+
 #ifndef AUXILIARES_H
 #define AUXILIARES_H
 
@@ -15,6 +17,8 @@
 #include <time.h>
 
 #include "caverna.h"
+
+// ================ declaracao de funcoes ================
 
 void leituraArquivo(TipoApontador *apCaverna, char *nomeArquivo);
 void EscritaArquivo(TipoApontador *apCaverna, TipoApontadorTabela *apTabela);

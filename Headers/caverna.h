@@ -5,6 +5,8 @@
 *   Professor: Daniel Mendes Barbosa
 */
 
+// ================ Estrutura de Dados e funcoes principais ================
+
 #ifndef CAVERNA_H
 #define CAVERNA_H
 
@@ -36,8 +38,9 @@ typedef struct
 
 typedef TipoCaverna *TipoApontador;
 
+// ================ declaracao de funcoes ================
+
 void inicializaCaverna(TipoApontador *apCaverna, int linha, int coluna, int vida);
-void mostrarCaverna(TipoApontador *apCaverna); // retirar dps
 int max(int a, int b);
 int verificaPosicao(TipoApontador *apCaverna, int x, int y);
 void movimentaEstudante(TipoApontador *apCaverna, TipoApontadorTabela *apTabelaPassos);
