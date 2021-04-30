@@ -9,7 +9,7 @@
 
 void leituraArquivo(TipoApontador *apCaverna, char *nomeArquivo)
 {
-    char valorLeitura[10]; // valor pode ser de até 10 digitos (deve ser inteiro - faixa de valores:  -2.147.483.648 até 2.147.483.647)
+    char valorLeitura[11]; // valor pode ser de até 10 digitos (deve ser inteiro - faixa de valores:  -2.147.483.648 até 2.147.483.647)
 
     FILE *arquivo;
 
@@ -114,7 +114,7 @@ void EscritaArquivo(TipoApontador *apCaverna, TipoApontadorTabela *apTabela)
     fclose(arquivoSaida);
 
     if (vida <= 0)
-    {                                       // vida do estudante ao final do trajeto <= 0
+    {                                     // vida do estudante ao final do trajeto <= 0
         remove("./saidas/resultado.txt"); // exclui o arquivo anterior para adicionar um novo contendo a solucao sem saida
         remove("./saidas/PASSOS.txt");    // exclui da pasta o arquivo PASSOS.txt, já que é impossivel sair
         arquivoSaida = fopen("./saidas/resultado.txt", "w");
